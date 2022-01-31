@@ -1,0 +1,20 @@
+Reading symbols from a.out...
+(gdb) b main
+Breakpoint 1 at 0x118a: file main.c, line 5.
+(gdb) r
+Starting program: /home/a.out 
+
+Breakpoint 1, main () at main.c:5
+5       {
+(gdb) n
+8           int N = 12;
+(gdb) n
+11          printf("%f ", findSQRT(N));
+(gdb) n
+12          return 0;
+(gdb) n
+13      }
+(gdb) c
+Continuing.
+3.464102 [Inferior 1 (process 1524) exited normally]
+(gdb)
