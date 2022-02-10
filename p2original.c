@@ -1,20 +1,33 @@
 #include<stdio.h>
-
-float large(float a, float b, float c)
+int cmp(int a,int b,int c,int *largest)
 {
-   if(a>=b && a>=c) return a;
-   else if(b>=a && b>=c) return b;
-   else return c;
+  *largest=0;
+  if(a>b && a>c)
+        *largest=a;
+  else if(b>c)
+        *largest=b;
+  else
+        *largest=c;
 }
-
+int input()
+{
+  int a;
+  printf("enter the number:");
+  scanf("%d", &a);
+  return a;
+}
+void output(int l)
+{
+  printf("largest number is:%d\n",l);
+}
 int main()
 {
-   float num1, num2, num3, largest;
-
-   printf("Enter three numbers: ");
-   scanf("%f %f %f", &num1, &num2, &num3);
-
-   largest = large(num1, num2, num3);
-   printf("Largest number = %.2f",largest);
-   return 0;
+  int x,y,z,l;
+  x=input();
+  y=input();
+  z=input();
+  cmp(x,y,z,&l);
+  output(l);
+  return 0;
 }
+
