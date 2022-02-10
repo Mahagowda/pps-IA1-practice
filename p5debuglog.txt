@@ -1,20 +1,27 @@
 Reading symbols from a.out...
 (gdb) b main
-Breakpoint 1 at 0x118a: file main.c, line 5.
+Breakpoint 1 at 0x11a9: file main.c, line 4.
 (gdb) r
 Starting program: /home/a.out 
 
-Breakpoint 1, main () at main.c:5
-5       {
+Breakpoint 1, main () at main.c:4
+4       {
 (gdb) n
-8           int N = 12;
+7         printf("enter a number:");
 (gdb) n
-11          printf("%f ", findSQRT(N));
+8         scanf("%d",&n);
 (gdb) n
-12          return 0;
+enter a number:5
+9         v=sqrt(n);
 (gdb) n
-13      }
-(gdb) c
-Continuing.
-3.464102 [Inferior 1 (process 1524) exited normally]
+10        printf("square root of %d is %f",n,v);
+(gdb) n
+11      }
+(gdb) n
+__libc_start_main (main=0x5555555551a9 <main>, argc=1, argv=0x7fffffffecc8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fffffffecb8) at ../csu/libc-start.c:342
+342     ../csu/libc-start.c: No such file or directory.
+(gdb) n
+square root of 5 is 2.236068[Inferior 1 (process 4985) exited normally]
 (gdb)
