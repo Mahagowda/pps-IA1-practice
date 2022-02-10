@@ -1,21 +1,24 @@
-#include <stdio.h>
-#include <stdlib.h>
+(gdb) b main
+Breakpoint 1 at 0x7b1: file p1original.c, line 16.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
-int main()
-{
-
-	int num1, num2, result;
-
-	printf("\nEnter the two number: ");
-	scanf("%d %d", &num1, &num2);
-	result = add(num1, num2);
-	printf("\nAddition of %d and %d is %d", num1, num2, result);
-
-	return 1;
-}
-int add(int no1, int no2)
-{
-	int res;
-	res = no1 + no2;
-	return res;
-}
+Breakpoint 1, main () at p1original.c:16
+16   { 
+(gdb) n
+18   input(&a,&b);
+(gdb) n
+enter the number:5
+6
+19   add(a,b,&sum);
+(gdb) n
+20   output(a,b,sum);
+(gdb) p
+The history is empty.
+(gdb) n
+21   return 0;
+(gdb) c
+Continuing.
+sum of 5+6 is 11n[Inferior 1 (process 784) exited normally]
+(gdb)
