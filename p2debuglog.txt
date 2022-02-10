@@ -1,4 +1,4 @@
- gcc -g p2original.c
+ gcc -g p2original.c
  gdb ./a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -16,28 +16,30 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from ./a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x776: file p2original.c, line 11.
+Breakpoint 1 at 0x7f4: file p2original.c, line 24.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p2original.c:11
-11  {
+Breakpoint 1, main () at p2original.c:24
+24  {
 (gdb) n
-14     printf("Enter three numbers: ");
+26    x=input();
 (gdb) n
-15     scanf("%f %f %f", &num1, &num2, &num3);
+enter the number:4
+27    y=input();
 (gdb) n
-Enter three numbers: 4
-7
-1
-17     largest = large(num1, num2, num3);
+enter the number:6
+28    z=input();
 (gdb) n
-18     printf("Largest number = %.2f",largest);
+enter the number:8
+29    cmp(x,y,z,&l);
 (gdb) n
-19     return 0;
+30    output(l);
 (gdb) n
-20  }(gdb) c
+largest number is:8
+31    return 0;
+(gdb) c
 Continuing.
-Largest number = 7.00[Inferior 1 (process 269) exited normally]
+[Inferior 1 (process 436) exited normally]
 (gdb)
