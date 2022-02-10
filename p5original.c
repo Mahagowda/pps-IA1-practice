@@ -1,13 +1,11 @@
-#include <math.h>
-#include <stdio.h>
-double findSQRT(double N) { return sqrt(N); }
- int main()
+#include<stdio.h>
+#include<math.h>
+int main()
 {
- 
-    
-    int N = 12;
- 
-  
-    printf("%f ", findSQRT(N));
-    return 0;
+  int n;
+  double v;
+  printf("enter a number:");
+  scanf("%d",&n);
+  v=sqrt(n);
+  printf("square root of %d is %f",n,v);
 }
