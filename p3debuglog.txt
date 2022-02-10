@@ -1,4 +1,4 @@
- gcc -g p3original.c
+ gcc -g p3original.c
  gdb ./a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -16,7 +16,7 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from ./a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x772: file p3original.c, line 3.
+Breakpoint 1 at 0x722: file p3original.c, line 3.
 (gdb) r
 Starting program: /home/runner/pps-IA1-practice/a.out 
 warning: Error disabling address space randomization: Operation not permitted
@@ -24,49 +24,34 @@ warning: Error disabling address space randomization: Operation not permitted
 Breakpoint 1, main () at p3original.c:3
 3   {
 (gdb) n
-4     int Number, i, Sum = 0;
+4     int n,i,sum=0;
 (gdb) n
-6     printf("\nPlease Enter any Integer Value\n");
+5     printf("enter positive integer:");
 (gdb) n
-
-Please Enter any Integer Value
-7     scanf("%d", &Number);
+6     scanf("%d",&n);
 (gdb) n
-7
-9     for(i = 1; i <= Number; i++)
+enter positive integer:3
+7     for(i=1;i<=n;++i)
 (gdb) n
-11       Sum = Sum + i;
+9       sum+=1;
 (gdb) n
-9     for(i = 1; i <= Number; i++)
+7     for(i=1;i<=n;++i)
 (gdb) n
-11       Sum = Sum + i;
+9       sum+=1;
 (gdb) n
-9     for(i = 1; i <= Number; i++)
+7     for(i=1;i<=n;++i)
+(gdb) 
+9       sum+=1;
+(gdb) nn
+Undefined command: "nn".  Try "help".
 (gdb) n
-11       Sum = Sum + i;
+7     for(i=1;i<=n;++i)
 (gdb) n
-9     for(i = 1; i <= Number; i++)
+11    printf("sum=%d",sum);
 (gdb) n
-11       Sum = Sum + i;
+12    return 0;
 (gdb) n
-9     for(i = 1; i <= Number; i++)
-(gdb) n
-11       Sum = Sum + i;
-(gdb) n
-9     for(i = 1; i <= Number; i++)
-(gdb) n
-11       Sum = Sum + i;
-(gdb) n
-9     for(i = 1; i <= Number; i++)
-(gdb) n
-11       Sum = Sum + i;
-(gdb) n
-9     for(i = 1; i <= Number; i++)
-(gdb) n
-14    printf("Sum of Natural Numbers = %d", Sum);
-(gdb) n
-15    return 0;
-(gdb) c
+13  }(gdb) c
 Continuing.
-Sum of Natural Numbers = 28[Inferior 1 (process 310) exited normally]
+sum=3[Inferior 1 (process 244) exited normally]
 (gdb)
